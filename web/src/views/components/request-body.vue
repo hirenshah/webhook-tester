@@ -149,4 +149,7 @@ export default defineComponent({
   word-wrap: break-word;
   white-space: pre-wrap;
 }
+.tab-content > .active {
+  display: grid;
+}
 </style>

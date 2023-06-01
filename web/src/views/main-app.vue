@@ -9,7 +9,7 @@
     />
 
     <div class="container-fluid d-flex h-100">
-      <div class="row flex-xl-nowrap h-100">
+      <div class="row flex-xl-nowrap h-100 w-100">
         <div
           class="sidebar d-flex flex-column px-2 py-0"
         >

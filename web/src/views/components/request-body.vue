@@ -73,6 +73,7 @@ import {RecordedRequest} from '../../api/api'
 import hljsVuePlugin from '@highlightjs/vue-plugin'
 import HexView from './hex-view.vue'
 
+const errorsHandler = console.error
 const textDecoder = new TextDecoder('utf-8')
 
 export default defineComponent({
@@ -102,8 +103,8 @@ export default defineComponent({
   methods: {
     content(pretty: boolean): string {
       if (this.request && this.request.content.length) {
-        console.log(this.request)
-        console.log(this.request.content)
+        errorsHandler(this.request)
+        errorsHandler(this.request.content)
         const asString = textDecoder.decode(this.request.content)
 
         if (pretty) {

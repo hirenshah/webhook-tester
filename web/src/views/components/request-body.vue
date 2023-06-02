@@ -102,6 +102,8 @@ export default defineComponent({
   methods: {
     content(pretty: boolean): string {
       if (this.request && this.request.content.length) {
+        console.log(this.request)
+        console.log(this.request.content)
         const asString = textDecoder.decode(this.request.content)
 
         if (pretty) {

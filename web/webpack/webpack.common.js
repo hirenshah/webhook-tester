@@ -73,7 +73,7 @@ module.exports = {
     new webpack.IgnorePlugin({resourceRegExp: /^\.\/locale$/, contextRegExp: /moment$/}), // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
     new webpack.DefinePlugin({ // https://github.com/vuejs/vue-next/tree/master/packages/vue#bundler-build-feature-flags
       __VUE_OPTIONS_API__: true,
-      __VUE_PROD_DEVTOOLS__: false,
+      __VUE_PROD_DEVTOOLS__: true,
     }),
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({ // https://github.com/webpack-contrib/mini-css-extract-plugin

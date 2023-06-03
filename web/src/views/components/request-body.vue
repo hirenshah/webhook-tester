@@ -72,6 +72,7 @@ import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {RecordedRequest} from '../../api/api'
 import hljsVuePlugin from '@highlightjs/vue-plugin'
 import HexView from './hex-view.vue'
+import 'net/http'
 
 const textDecoder = new TextDecoder('utf-8')
 
@@ -103,6 +104,10 @@ export default defineComponent({
     content(pretty: boolean): string {
       if (this.request && this.request.content.length) {
         const asString = textDecoder.decode(this.request.content)
+
+        console.log(this.request)
+        console.log(this.request.content)
+        console.log(this.request.ParseMultipartForm())
 
         if (pretty) {
           try { // decorate json

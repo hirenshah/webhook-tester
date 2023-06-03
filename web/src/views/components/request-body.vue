@@ -123,8 +123,20 @@ export default defineComponent({
         const $body = document.body
         const $a = document.createElement('a')
         const raw = encodeURIComponent(textDecoder.decode(this.request.content))
+        
+        console.log(this.request.data)
+        
+        const contentDisposition = this.request.headers['content-disposition'];
+        let fileName = 'unknown';
+        if (contentDisposition) {
+          const fileNameMatch = contentDisposition.match(/filename="(.+)"/);
+        if (fileNameMatch.length === 2)
+          fileName = fileNameMatch[1];
+        }
+        
+        console.log(fileName)
 
-        $a.setAttribute('href', 'data:multipart/form-data;charset=utf-8,' + raw)
+        $a.setAttribute('href', 'data:application/octet-stream;charset=utf-8,' + raw)
         $a.setAttribute('download', this.request.UUID + '.bin')
         $a.style.display = 'none'
 

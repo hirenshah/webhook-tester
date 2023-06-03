@@ -104,9 +104,6 @@ export default defineComponent({
       if (this.request && this.request.content.length) {
         const asString = textDecoder.decode(this.request.content)
 
-        console.log(this.request)
-        console.log(this.request.content)
-
         if (pretty) {
           try { // decorate json
             return JSON.stringify(JSON.parse(asString), undefined, 2)

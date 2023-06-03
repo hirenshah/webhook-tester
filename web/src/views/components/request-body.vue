@@ -124,7 +124,7 @@ export default defineComponent({
         const $a = document.createElement('a')
         const raw = encodeURIComponent(textDecoder.decode(this.request.content))
 
-        $a.setAttribute('href', 'data:application/octet-stream;charset=utf-8,' + raw)
+        $a.setAttribute('href', 'data:multipart/form-data;charset=utf-8,' + raw)
         $a.setAttribute('download', this.request.UUID + '.bin')
         $a.style.display = 'none'
 

@@ -123,9 +123,7 @@ export default defineComponent({
         const $body = document.body
         const $a = document.createElement('a')
         const raw = encodeURIComponent(textDecoder.decode(this.request.content))
-        
-        console.log(this.request.data)
-        
+                
         const contentDisposition = this.request.headers['content-disposition'];
         let fileName = 'unknown';
         if (contentDisposition) {

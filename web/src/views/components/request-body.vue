@@ -10,7 +10,7 @@
           <font-awesome-icon icon="fa-solid fa-font" /> Text view
         </span>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <span
           class="btn nav-link pl-4 pr-4 pt-1 pb-1"
           :class="{ 'active': mode === 'binary' }"
@@ -29,7 +29,7 @@
         >
           <font-awesome-icon icon="fa-solid fa-download" /> Download
         </span>
-      </li>
+      </li> -->
     </ul>
     <div class="tab-content pt-2 pb-2">
       <div
@@ -123,8 +123,6 @@ export default defineComponent({
         const $body = document.body
         const $a = document.createElement('a')
         const raw = encodeURIComponent(textDecoder.decode(this.request.content))
-
-        console.log(this.request.content.reverse())
 
         $a.setAttribute('href', 'data:application/octet-stream;charset=utf-8,' + raw)
         $a.setAttribute('download', this.request.UUID + '.bin')

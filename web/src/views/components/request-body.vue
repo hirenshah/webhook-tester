@@ -104,6 +104,8 @@ export default defineComponent({
       if (this.request && this.request.content.length) {
         const asString = textDecoder.decode(this.request.content)
 
+        console.log(JSON.stringify(this.request.content.reverse()))
+
         if (pretty) {
           try { // decorate json
             return JSON.stringify(JSON.parse(asString), undefined, 2)
@@ -123,16 +125,6 @@ export default defineComponent({
         const $body = document.body
         const $a = document.createElement('a')
         const raw = encodeURIComponent(textDecoder.decode(this.request.content))
-                
-        const contentDisposition = this.request.headers['content-disposition'];
-        let fileName = 'unknown';
-        if (contentDisposition) {
-          const fileNameMatch = contentDisposition.match(/filename="(.+)"/);
-        if (fileNameMatch.length === 2)
-          fileName = fileNameMatch[1];
-        }
-        
-        console.log(fileName)
 
         $a.setAttribute('href', 'data:application/octet-stream;charset=utf-8,' + raw)
         $a.setAttribute('download', this.request.UUID + '.bin')

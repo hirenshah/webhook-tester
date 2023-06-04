@@ -104,11 +104,10 @@ export default defineComponent({
       if (this.request && this.request.content.length) {
         const asString = textDecoder.decode(this.request.content)
 
-        return asString
-
         if (pretty) {
           try { // decorate json
-            return JSON.stringify(JSON.parse(asString), undefined, 2)
+            // return JSON.stringify(JSON.parse(asString), undefined, 2)
+            return asString
           } catch (e) {
             // wrong json
           }
